@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/icofont.min.css">
     <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="icon" href="assets/img/search-property.ico" type="image/x-icon">
     <title>Portal MagniCred | Login</title>
   </head>
 

@@ -118,6 +118,7 @@ aside.sidebar {
 aside.sidebar .menu {
   width: 100%;
   flex-grow: 1;
+  position: sticky;
 }
 
 aside.sidebar .menu ul.nav-list {
@@ -146,34 +147,51 @@ body.hide-sidebar aside.sidebar {
 }
 
 aside.sidebar .sidebar-widgets {
-  position: sticky;
-  bottom: 20px;
-}
-
-aside.sidebar .sidebar-widget {
-  display: flex;
+  display: block;
   align-items: center;
-}
-
-aside.sidebar .sidebar-widget .icon {
-  font-size: 3.5rem;
-  margin: 2px 10px 2px 0px;
-}
-
-aside.sidebar .sidebar-widget .info {
-  display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+  position: sticky;
+  bottom: 10px;
+  text-decoration: none;
+}
+
+aside.sidebar .sidebar-widget a {
+  display: flex;
+  width: 100%;
   align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+aside.sidebar .sidebar-widget a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /
+}
+
+aside.sidebar .sidebar-widget a .icon {
+  margin-left: 40px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+aside.sidebar .sidebar-widget a .info {
   flex: 1;
+  flex-direction: column;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: #555;
 }
 
 .division {
-  widows: 80%;
-  border: solid 1px #eee;
+  margin-left: 20px;
+  width: 80%;
+  border: solid 1px #c7c5c5;
 }
 
 aside.sidebar .info .main {
-  font-size: 2rem;
+  font-size: 0.8rem;
 }
 
 main.content {
@@ -217,7 +235,6 @@ footer.footer {
   display: none;
   justify-content: center;
   align-items: center;
-  padding-right: 20px;
   font-size: 0.5rem;
   grid-area: footer;
   color: #ddd;

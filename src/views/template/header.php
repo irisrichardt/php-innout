@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/icofont.min.css">
     <link rel="stylesheet" href="assets/css/template.css">
+    <link rel="icon" href="assets/img/search-property.ico" type="image/x-icon">
+
     <title>Portal MaginCred | Home</title>
   </head>
 
-  <body class="">
+  <body class="hide-sidebar">
     <header class="header">
       <div class="logo">
         <i class="icofont-search-property me-2"></i>
