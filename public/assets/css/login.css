@@ -7,14 +7,16 @@ body {
 }
 
 .form-login {
-  flex-basis: 450px;
+  flex-basis: 700px;
 }
 
 .login-card .card-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.28rem;
+  font-size: 1.3rem;
+  background-color: #5197dd;
+  color: white;
 }
 
 .login-card .card-footer {
