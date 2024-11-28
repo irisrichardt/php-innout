@@ -1,20 +1,16 @@
 <main class="content">
   <?php
   include(TEMPLATE_PATH . "/messages.php");
+  renderTitle(
+    "Registrar Ponto",
+    "Gerencie seu trabalho facilmente",
+    "icofont-check-alt"
+  );
   ?>
-  <div class="content-title mb-4">
-    <i class="icon icofont-check-alt mx-4"></i>
-    <div>
-      <div>
-        <h1>Registrar Ponto</h1>
-        <h2>Gerencie seu trabalho facilmente</h2>
-      </div>
-    </div>
-  </div>
   <div class="card">
     <div class="card-header">
-      <h3><?= $today ?></h3>
-      <p class="mb-0">Os batimentos efetuados hoje</p>
+      <h3 class="date"><?= $today ?></h3>
+      <p class="subtitle mb-0">Batimentos efetuados hoje</p>
     </div>
     <div class="card-body">
       <div class="d-flex m-5 justify-content-around">
