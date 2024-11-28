@@ -23,14 +23,14 @@
       </div>
     </div>
     <div class="card-footer d-flex justify-content-center">
-      <a href="innout_controller.php" class="btn btn-success">
+      <a href="innout.php" class="btn btn-success">
         <i class="icofont-check me-1"></i>
         Bater o Ponto
       </a>
     </div>
   </div>
 
-  <form class="form-login mt-5" action="innout_controller.php" method="post">
+  <form class="form-login mt-5" action="innout.php" method="post">
     <div class="input-group no-border">
       <input type="text" name="forcedTime" class="form-control" placeholder="Informe a hora para simular o batimento">
       <button class="btn btn-danger ms-3">

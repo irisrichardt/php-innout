@@ -13,7 +13,7 @@ if (count($_POST) > 0) {
   try {
     $user = $login->checkLogin();
     $_SESSION['user'] = $user;
-    header("Location: dashboard");
+    header("Location: dashboard.php");
   } catch (AppException $e) {
     $exception = $e;
   }

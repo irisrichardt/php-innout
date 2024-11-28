@@ -2,7 +2,7 @@
   <nav class="menu mt-3">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="dashboard_controller.php">
+        <a href="dashboard.php">
           <i class="icofont-dashboard-web me-2"></i>
           Dashboard
         </a>
@@ -35,7 +35,7 @@
   </nav>
   <div class="sidebar-widgets">
     <div class="sidebar-widget">
-      <a href="day_records_controller.php">
+      <a href="day_records.php">
         <i class="icon icofont-hand-thunder"></i>
         <div class="info">
           <span class="main">Registrar ponto</span>

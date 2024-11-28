@@ -20,4 +20,4 @@ try {
   addErrorMsg($e->getMessage());
 }
 
-header('Location: day_records');
+header('Location: day_records.php');
