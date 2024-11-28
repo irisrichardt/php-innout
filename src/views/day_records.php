@@ -1,16 +1,16 @@
 <main class="content">
   <?php
-  include(TEMPLATE_PATH . "/messages.php");
   renderTitle(
     "Registrar Ponto",
     "Gerencie sua jornada de trabalho",
     "icofont-check-alt"
   );
+  include(TEMPLATE_PATH . "/messages.php");
   ?>
   <div class="card">
     <div class="card-header">
       <h3 class="date"><?= $today ?></h3>
-      <p class="subtitle mb-0">Batimentos efetuados hoje</p>
+      <p class="subtitle mb-0">Registros efetuados hoje</p>
     </div>
     <div class="card-body">
       <div class="d-flex m-5 justify-content-around">
@@ -23,14 +23,14 @@
       </div>
     </div>
     <div class="card-footer d-flex justify-content-center">
-      <a href="innout.php" class="btn btn-success">
+      <a href="innout_controller.php" class="btn btn-success">
         <i class="icofont-check me-1"></i>
         Bater o Ponto
       </a>
     </div>
   </div>
 
-  <form class="mt-5" action="innout.php" method="post">
+  <form class="form-login mt-5" action="innout_controller.php" method="post">
     <div class="input-group no-border">
       <input type="text" name="forcedTime" class="form-control" placeholder="Informe a hora para simular o batimento">
       <button class="btn btn-danger ms-3">

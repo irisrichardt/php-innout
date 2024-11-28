@@ -56,7 +56,7 @@ class Model
 
   public static function getResultSetFromSelect($filters = [], $columns = '*')
   {
-    $sql = "SELECT ${columns} FROM "
+    $sql = "SELECT {$columns} FROM "
       . static::$tableName
       . static::getFilters($filters)
       . ";";
@@ -70,7 +70,7 @@ class Model
     }
   }
 
-  public function save()
+  public function insert()
   {
     $sql = "INSERT INTO " . static::$tableName . " ("
       . implode(",", static::$columns) . ") VALUES (";
@@ -82,6 +82,17 @@ class Model
     $this->id = $id;
   }
 
+  public function update()
+  {
+    $setClause = implode(', ', array_map(function ($col) {
+      return "$col = " . static::getFormatedValues($this->$col);
+    }, static::$columns));
+
+    $sql = "UPDATE " . static::$tableName . " SET $setClause WHERE id = {$this->id}";
+
+    Database::executeSQL($sql);
+  }
+
   private static function getFilters($filters): string
   {
     $sql = "";
@@ -89,7 +100,7 @@ class Model
     if (count($filters) > 0) {
       $sql .= " WHERE 1 = 1";
       foreach ($filters as $column => $value) {
-        $sql .= " AND ${column} = " . static::getFormatedValues($value);
+        $sql .= " AND {$column} = " . static::getFormatedValues($value);
       }
     }
 
@@ -101,7 +112,7 @@ class Model
     if (is_null($value)) {
       return "null";
     } elseif (gettype($value) === "string") {
-      return "'${value}'";
+      return "'{$value}'";
     } else {
       return $value;
     }
