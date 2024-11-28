@@ -2,6 +2,15 @@
   <?php
   include(TEMPLATE_PATH . "/messages.php");
   ?>
+  <div class="content-title mb-4">
+    <i class="icon icofont-check-alt mx-4"></i>
+    <div>
+      <div>
+        <h1>Registrar Ponto</h1>
+        <h2>Gerencie seu trabalho facilmente</h2>
+      </div>
+    </div>
+  </div>
   <div class="card">
     <div class="card-header">
       <h3><?= $today ?></h3>
