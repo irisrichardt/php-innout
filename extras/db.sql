@@ -10,6 +10,7 @@ CREATE TABLE users (
     end_date DATE,
     is_admin BOOLEAN NOT NULL DEFAULT false
 );
+
 CREATE TABLE working_hours (
     id INT(6) AUTO_INCREMENT PRIMARY KEY,
     user_id INT(6),
@@ -26,16 +27,16 @@ CREATE TABLE working_hours (
 
 -- Essa senha criptografada corresponde ao valor "a"
 INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (1, 'Admin', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'admin@gmail.com.br', '2000-1-1', null, 1);
+VALUES (1, 'Admin', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'admin@gmail.com', '2000-1-1', null, 1);
 
 INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (2, 'Ana', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'ana@gmail.com.br', '2000-1-1', null, 1);
+VALUES (2, 'Ana', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'ana@gmail.com', '2000-1-1', null, 1);
 
 INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (3, 'Maria', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'maria@gmail.com.br', '2000-1-1', null, 0);
+VALUES (3, 'Maria', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'maria@gmail.com', '2000-1-1', null, 0);
 
 INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (4, 'João', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'joao@gmail.com.br', '2000-1-1', null, 0);
+VALUES (4, 'João', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'joao@gmail.com', '2000-1-1', null, 0);
 
 INSERT INTO users (id, name, password, email, start_date, end_date, is_admin)
-VALUES (5, 'Pedro', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'pedro@gmail.com.br', '2000-1-1', '2019-1-1', 0);
+VALUES (5, 'Pedro', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'pedro@gmail.com', '2000-1-1', '2019-1-1', 0);

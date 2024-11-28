@@ -3,7 +3,7 @@
   include(TEMPLATE_PATH . "/messages.php");
   renderTitle(
     "Registrar Ponto",
-    "Gerencie seu trabalho facilmente",
+    "Gerencie sua jornada de trabalho",
     "icofont-check-alt"
   );
   ?>
