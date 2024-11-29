@@ -19,18 +19,20 @@
           Relatório Mensal
         </a>
       </li>
-      <li class="nav-item">
-        <a href="day_records.php">
-          <i class="icofont-chart-histogram me-2""></i>
-          Relatório Gerencial
-        </a>
-      </li>
-      <li class=" nav-item">
-            <a href="users.php">
-              <i class="icofont-users me-2"></i>
-              Usuários
-            </a>
-      </li>
+      <?php if ($user->is_admin): ?>
+        <li class="nav-item">
+          <a href="day_records.php">
+            <i class="icofont-chart-histogram me-2"></i>
+            Relatório Gerencial
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="users.php">
+            <i class="icofont-users me-2"></i>
+            Usuários
+          </a>
+        </li>
+      <?php endif ?>
     </ul>
   </nav>
   <div class="sidebar-widgets">
