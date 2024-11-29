@@ -38,6 +38,12 @@ header.header .logo {
   height: 100%;
 }
 
+header.header .logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
 header.header .menu-toggle {
   color: white;
   cursor: pointer;
@@ -234,6 +240,7 @@ main.content .content-title h2 {
 main.content .date {
   font-size: 1.3rem;
   color: #555;
+  margin-bottom: 0.1rem;
 }
 
 main.content .subtitle {
@@ -283,6 +290,83 @@ footer.footer {
 
 .summary-box .value {
   font-size: 2rem;
+}
+
+
+/* Table */
+.table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border-bottom: 0.5px solid #ddd;
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+.table .title {
+  padding-right: 70px;
+  color: #444;
+}
+
+.table .title-hr {
+  padding-right: 95px;
+  color: #444;
+}
+
+.card-body {
+  padding: 0;
+  margin: 0;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.icon-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.entry-icon,
+.exit-icon {
+  width: 30px;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.entry-icon {
+  color: #4CAF50;
+}
+
+.exit-icon {
+  color: #f44336;
+}
+
+.text-label {
+  width: 150px;
+  text-align: left;
+}
+
+.clock-time {
+  width: 30px;
+  color: steelblue;
+  text-align: left;
+}
+
+.clock-time-2 {
+  color: steelblue;
 }
 
 .text-purple {

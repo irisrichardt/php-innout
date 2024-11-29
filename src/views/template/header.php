@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/icofont.min.css">
     <link rel="stylesheet" href="assets/css/template.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+
     <link rel="icon" href="assets/img/search-property.ico" type="image/x-icon">
 
     <title>Portal MaginCred | Home</title>
@@ -16,10 +18,13 @@
   <body class="hide-sidebar">
     <header class="header">
       <div class="logo">
-        <i class="icofont-search-property me-2"></i>
+        <a href="dashboard.php">
+          <i class="home icofont-search-property me-2"></i>
+        </a>
         <span class="fw-light me-2">Portal</span>
         <span class="fw-light">Magni<span class="fw-semibold">Cred</span>
         </span>
+        </a>
       </div>
       <div class="menu-toggle mx-3">
         <i class="icofont-navigation-menu"></i>
