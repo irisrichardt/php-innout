@@ -15,7 +15,7 @@
     </div>
 
     <div class="card-body">
-      <table class="table table-striped text-center">
+      <table class="table table-striped text-center table-bordered table-hover">
         <thead>
           <tr>
             <th class="title">Descrição</th>

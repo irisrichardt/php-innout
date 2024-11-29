@@ -26,7 +26,7 @@
         </a>
       </li>
       <li class=" nav-item">
-            <a href="day_records.php">
+            <a href="users.php">
               <i class="icofont-users me-2"></i>
               Usuários
             </a>
