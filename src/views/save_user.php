@@ -10,7 +10,7 @@
   ?>
 
   <form action="#" method="post">
-    <!-- <input type="hidden" name="id" value="<?= $id ?>"> -->
+    <input type="hidden" name="id" value="<?= $id ?>">
 
     <div class="row g-3 mb-3">
       <div class="col-12 col-sm-6">
