@@ -5,7 +5,7 @@ requireValidSession(true);
 $exception = null;
 if (isset($_GET['delete'])) {
   try {
-    // User::deleteById($_GET['delete']);
+    User::deleteById($_GET['delete']);
     addSuccessMsg('Usuário excluído com sucesso.');
   } catch (Exception $e) {
     if (stripos($e->getMessage(), 'FOREIGN KEY')) {
