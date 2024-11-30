@@ -43,7 +43,7 @@
       </div>
 
       <div class="col-12 col-sm-6">
-        <label for="confirm_password" class="form-label">Confirmação de Senha</label>
+        <label for="confirm_password" class="form-label">Confirmação de senha</label>
         <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirme a senha"
           class="form-control <?= $errors['confirm_password'] ? 'is-invalid' : '' ?>">
         <div class="invalid-feedback">
@@ -54,7 +54,7 @@
 
     <div class="row g-3 mb-3">
       <div class="col-12 col-sm-6">
-        <label for="start_date" class="form-label">Data de Admissão</label>
+        <label for="start_date" class="form-label">Data de admissão</label>
         <input type="date" id="start_date" name="start_date"
           class="form-control <?= $errors['start_date'] ? 'is-invalid' : '' ?>" value="<?= $start_date ?>">
         <div class="invalid-feedback">
@@ -63,7 +63,7 @@
       </div>
 
       <div class="col-12 col-sm-6">
-        <label for="end_date" class="form-label">Data de Desligamento</label>
+        <label for="end_date" class="form-label">Data de desligamento</label>
         <input type="date" id="end_date" name="end_date"
           class="form-control <?= $errors['end_date'] ? 'is-invalid' : '' ?>" value="<?= $end_date ?>">
         <div class="invalid-feedback">
@@ -76,29 +76,31 @@
 
     <div class="mb-3">
       <label class="form-label">
-        <i class="icofont-architecture-alt me-2"></i>
-        Este usuário será um Administrador?
+        <i class="icofont-id-card me-2"></i>
+        Permissão do usuário
       </label>
       <div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input <?= $errors['is_admin'] ? 'is-invalid' : '' ?>" type="radio" id="is_admin_yes"
-            name="is_admin" value="1" <?= $is_admin ? 'checked' : '' ?>>
-          <label class="form-check-label" for="is_admin_yes">Sim</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input <?= $errors['is_admin'] ? 'is-invalid' : '' ?>" type="radio" id="is_admin_no"
-            name="is_admin" value="0" <?= !$is_admin ? 'checked' : '' ?>>
-          <label class="form-check-label" for="is_admin_no">Não</label>
-        </div>
+        <select class="form-select <?= $errors['role'] ? 'is-invalid' : '' ?>" name="role" id="role">
+          <option value="" disabled <?= empty($role) ? 'selected' : '' ?>>Selecione a opção</option>
+          <option value="admin" <?= $role === 'admin' ? 'selected' : '' ?>>Administrador</option>
+          <option value="locatario" <?= $role === 'locatario' ? 'selected' : '' ?>>Locatário</option>
+          <option value="imobiliaria" <?= $role === 'imobiliaria' ? 'selected' : '' ?>>Imobiliária</option>
+        </select>
+        <?php if ($errors['role']): ?>
+          <div class="invalid-feedback">
+            <?= $errors['role'] ?>
+          </div>
+        <?php endif; ?>
       </div>
+    </div>
 
-      <div class="d-flex justify-content-between mt-5">
-        <button class="btn btn-primary">
-          <i class="icofont-check me-2"></i>Salvar
-        </button>
-        <a href="/users.php" class="btn btn-secondary">
-          Cancelar
-        </a>
-      </div>
+    <div class="d-flex justify-content-between mt-5">
+      <button class="btn btn-primary">
+        <i class="icofont-check me-2"></i>Salvar
+      </button>
+      <a href="/users.php" class="btn btn-secondary">
+        Cancelar
+      </a>
+    </div>
   </form>
 </main>

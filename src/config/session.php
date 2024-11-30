@@ -3,10 +3,15 @@
 function requireValidSession($requiresAdmin = false)
 {
   $user = $_SESSION['user'];
+
   if (!isset($user)) {
     header('Location: login.php');
     exit();
-  } elseif ($requiresAdmin && !$user->is_admin) {
+  }
+
+  $type_user = $user->role;
+
+  if ($requiresAdmin && $type_user !== 'admin') {
     addErrorMsg('Acesso negado!');
     header('Location: dashboard.php');
     exit();

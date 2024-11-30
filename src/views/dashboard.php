@@ -2,16 +2,17 @@
   <?php
   renderTitle(
     'Dashboard',
-    'Visualize os dados do sistema',
-    'icofont-dashboard-web'
+    'Acompanhe as últimas atualizações',
+    'icofont-home'
   );
-
   include(TEMPLATE_PATH . "/messages.php");
   ?>
-  <h1>olá</h1>
-  <?php if ($user->is_admin): ?>
+  <h1>Olá, <?= $user->name ?>!</h1>
+  <?php if ($user->role === 'admin'): ?>
     <h3>Você é um administrador!</h3>
+  <?php elseif ($user->role === 'locatario'): ?>
+    <h3>Você é locatário(a)!</h3>
   <?php else: ?>
-    <h3>Você não tem privilégios de administrador.</h3>
+    <h3>Você é responsável pela imobialiaria!</h3>
   <?php endif; ?>
 </main>
