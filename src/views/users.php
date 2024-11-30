@@ -20,6 +20,7 @@
       <th>Email</th>
       <th>Data de Admissão</th>
       <th>Data de Desligamento</th>
+      <th>Permissão</th>
       <th>Ações</th>
     </thead>
     <tbody>
@@ -29,6 +30,17 @@
           <td class="align-middle"><?= $user->email ?></td>
           <td class="align-middle"><?= $user->start_date ?></td>
           <td class="align-middle"><?= $user->end_date ?? '-' ?></td>
+          <td class="align-middle">
+            <?php
+            $roles = [
+              'admin' => 'Administrador',
+              'locatario' => 'Locatário',
+              'imobiliaria' => 'Imobiliária'
+            ];
+
+            echo $roles[$user->role] ?? 'Desconhecido';
+            ?>
+          </td>
           <td class="align-middle">
             <div class="d-flex justify-content-center gap-2">
               <a href="save_user.php?update=<?= $user->id ?>" class="btn btn-sm btn-secondary me-2"
