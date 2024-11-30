@@ -25,7 +25,7 @@
 
       <?php if ($user->role === 'admin' || $user->role === 'locatario'): ?>
         <li class="nav-item">
-          <a href="day_records.php">
+          <a href="locatarios.php">
             <i class="icofont-users-alt-2 me-2"></i>
             Locatários
           </a>
