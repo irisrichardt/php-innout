@@ -20,7 +20,7 @@ class Model
         $cleanValue = $value;
         if ($sanitize && isset($cleanValue)) {
           $cleanValue = strip_tags(trim($cleanValue));
-          $cleanValue = htmlentities($cleanValue, ENT_NOQUOTES);
+          // $cleanValue = htmlentities($cleanValue, ENT_NOQUOTES);
           $cleanValue = mysqli_real_escape_string($conn, $cleanValue);
         }
         $this->$key = $cleanValue;
@@ -85,11 +85,15 @@ class Model
 
   public function insert()
   {
+    $columns = array_filter(static::$columns, fn($col) => $col !== 'id');
+
     $sql = "INSERT INTO " . static::$tableName . " ("
-      . implode(",", static::$columns) . ") VALUES (";
-    foreach (static::$columns as $col) {
+      . implode(",", $columns) . ") VALUES (";
+
+    foreach ($columns as $col) {
       $sql .= static::getFormatedValues($this->$col) . ",";
     }
+
     $sql[strlen($sql) - 1] = ')';
     $id = Database::executeSQL($sql);
     $this->id = $id;

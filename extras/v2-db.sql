@@ -33,9 +33,14 @@ CREATE TABLE working_hours (
 CREATE TABLE locatarios (
     id INT(6) AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    endereco VARCHAR(255) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    telefone VARCHAR(15) NOT NULL
+    telefone VARCHAR(15) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    estado VARCHAR(2) NOT NULL,
+    bairro VARCHAR(100) NOT NULL,
+    rua VARCHAR(255) NOT NULL,
+    numero VARCHAR(20) NOT NULL,
+    cep VARCHAR(9) NOT NULL
 );
 
 -- Criação da tabela de imobiliárias
@@ -49,7 +54,6 @@ CREATE TABLE imobiliarias (
     responsavel VARCHAR(100) NOT NULL
 );
 
--- Inserindo 10 usuários fictícios
 INSERT INTO users (name, password, email, start_date, role)
 VALUES
 ('Admin', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'admin@gmail.com', '2000-01-01', 'admin'),
@@ -63,7 +67,6 @@ VALUES
 ('Carlos', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'carlos@gmail.com', '2000-01-01', 'imobiliaria'),
 ('Ricardo', '$2y$10$/vC1UKrEJQUZLN2iM3U9re/4DQP74sXCOVXlYXe/j9zuv1/MHD4o.', 'ricardo@gmail.com', '2000-01-01', 'imobiliaria');
 
--- Inserindo 10 horas de trabalho fictícias
 INSERT INTO working_hours (user_id, work_date, time1, time2, time3, time4, worked_time)
 VALUES
 (1, '2024-11-01', '09:00:00', '10:00:00', '13:00:00', '18:00:00', 8),
@@ -77,30 +80,28 @@ VALUES
 (9, '2024-11-08', '08:30:00', '11:00:00', '13:30:00', '16:30:00', 7),
 (10, '2024-11-09', '09:00:00', '12:00:00', '13:00:00', '18:00:00', 8);
 
--- Inserindo 10 locatários fictícios
-INSERT INTO locatarios (nome, endereco, email, telefone)
+INSERT INTO locatarios (nome, email, telefone, cidade, estado, bairro, rua, numero, cep)
 VALUES
-('João da Silva', 'Rua A, 123, Bairro X', 'joao@gmail.com', '1111-1111'),
-('Maria Oliveira', 'Rua B, 456, Bairro Y', 'maria@gmail.com', '2222-2222'),
-('Carlos Santos', 'Rua C, 789, Bairro Z', 'carlos@gmail.com', '3333-3333'),
-('Ana Costa', 'Avenida D, 101, Bairro W', 'ana@gmail.com', '4444-4444'),
-('Pedro Lima', 'Travessa E, 202, Bairro V', 'pedro@gmail.com', '5555-5555'),
-('Luciana Alves', 'Rua F, 303, Bairro U', 'luciana@gmail.com', '6666-6666'),
-('Felipe Martins', 'Rua G, 404, Bairro T', 'felipe@gmail.com', '7777-7777'),
-('Roberta Souza', 'Rua H, 505, Bairro S', 'roberta@gmail.com', '8888-8888'),
-('Thiago Silva', 'Rua I, 606, Bairro R', 'thiago@gmail.com', '9999-9999'),
-('Cláudia Lima', 'Rua J, 707, Bairro Q', 'claudia@gmail.com', '1010-1010');
+('João da Silva', 'joao@gmail.com', '1111-1111', 'São Paulo', 'SP', 'Bairro X', 'Rua A', '123', '01001-000'),
+('Maria Oliveira', 'maria@gmail.com', '2222-2222', 'Rio de Janeiro', 'RJ', 'Bairro Y', 'Rua B', '456', '20040-002'),
+('Carlos Santos', 'carlos@gmail.com', '3333-3333', 'Belo Horizonte', 'MG', 'Bairro Z', 'Rua C', '789', '30140-110'),
+('Ana Costa', 'ana@gmail.com', '4444-4444', 'Curitiba', 'PR', 'Bairro W', 'Avenida D', '101', '80010-130'),
+('Pedro Lima', 'pedro@gmail.com', '5555-5555', 'Porto Alegre', 'RS', 'Bairro V', 'Travessa E', '202', '90010-150'),
+('Luciana Alves', 'luciana@gmail.com', '6666-6666', 'Florianópolis', 'SC', 'Bairro U', 'Rua F', '303', '88010-200'),
+('Felipe Martins', 'felipe@gmail.com', '7777-7777', 'Salvador', 'BA', 'Bairro T', 'Rua G', '404', '40010-300'),
+('Roberta Souza', 'roberta@gmail.com', '8888-8888', 'Fortaleza', 'CE', 'Bairro S', 'Rua H', '505', '60010-400'),
+('Thiago Silva', 'thiago@gmail.com', '9999-9999', 'Recife', 'PE', 'Bairro R', 'Rua I', '606', '50010-500'),
+('Cláudia Lima', 'claudia@gmail.com', '1010-1010', 'Manaus', 'AM', 'Bairro Q', 'Rua J', '707', '69010-600');
 
--- Inserindo 10 imobiliárias fictícias
 INSERT INTO imobiliarias (nome, telefone, email, cidade, estado, responsavel)
 VALUES
-('Imobiliária ABC', '6666-6666', 'abc@imobiliaria.com', 'São Paulo', 'SP', 'José Ferreira'),
-('Imobiliária XYZ', '7777-7777', 'xyz@imobiliaria.com', 'Rio de Janeiro', 'RJ', 'Carla Mendes'),
-('Imobiliária LMN', '8888-8888', 'lmn@imobiliaria.com', 'Belo Horizonte', 'MG', 'Fernando Souza'),
-('Imobiliária OPQ', '9999-9999', 'opq@imobiliaria.com', 'Curitiba', 'PR', 'Mariana Rocha'),
-('Imobiliária DEF', '1010-1010', 'def@imobiliaria.com', 'Porto Alegre', 'RS', 'Ricardo Alves'),
-('Imobiliária GHI', '1212-1212', 'ghi@imobiliaria.com', 'Florianópolis', 'SC', 'Larissa Costa'),
-('Imobiliária JKL', '1313-1313', 'jkl@imobiliaria.com', 'Salvador', 'BA', 'Eduardo Pereira'),
-('Imobiliária MNO', '1414-1414', 'mno@imobiliaria.com', 'Fortaleza', 'CE', 'Gabriela Lima'),
-('Imobiliária PQR', '1515-1515', 'pqr@imobiliaria.com', 'Recife', 'PE', 'Amanda Martins'),
-('Imobiliária STU', '1616-1616', 'stu@imobiliaria.com', 'Manaus', 'AM', 'Vinícius Oliveira');
+('Imobiliária ABC', '6666-6666', 'abc@imobiliaria.com', 'São Paulo', 'SP', 'José Lima'),
+('Imobiliária XYZ', '7777-7777', 'xyz@imobiliaria.com', 'Rio de Janeiro', 'RJ', 'Mariana Costa'),
+('Imobiliária 123', '8888-8888', '123@imobiliaria.com', 'Belo Horizonte', 'MG', 'Carlos Santos'),
+('Imobiliária Mais', '9999-9999', 'mais@imobiliaria.com', 'Curitiba', 'PR', 'Felipe Martins'),
+('Imobiliária Boa Vista', '1111-1111', 'boavista@imobiliaria.com', 'Porto Alegre', 'RS', 'Roberta Souza'),
+('Imobiliária Alto Padrão', '2222-2222', 'altopadrao@imobiliaria.com', 'Florianópolis', 'SC', 'Cláudia Lima'),
+('Imobiliária Real', '3333-3333', 'real@imobiliaria.com', 'Salvador', 'BA', 'Thiago Silva'),
+('Imobiliária Brasil', '4444-4444', 'brasil@imobiliaria.com', 'Fortaleza', 'CE', 'Luciana Alves'),
+('Imobiliária União', '5555-5555', 'uniao@imobiliaria.com', 'Recife', 'PE', 'Pedro Lima'),
+('Imobiliária Centro', '6666-6666', 'centro@imobiliaria.com', 'Manaus', 'AM', 'Ana Costa');

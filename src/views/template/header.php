@@ -12,7 +12,7 @@
 
     <link rel="icon" href="assets/img/search-property.ico" type="image/x-icon">
 
-    <title>Portal MaginCred | Home</title>
+    <title>Portal MaginCred | Gerencie sua imobiliaria</title>
   </head>
 
   <body class="hide-sidebar">
