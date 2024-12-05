@@ -31,7 +31,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="day_records.php">
+          <a href="relatorio_locatarios.php">
             <i class="icofont-files-stack me-2"></i>
             Relatório Locatários
           </a>

@@ -28,6 +28,23 @@ class Locatario extends Model
     return parent::update();
   }
 
+  public static function countLocatariosByEstado()
+  {
+    $query = "SELECT estado, COUNT(*) AS count FROM " . static::$tableName . " GROUP BY estado";
+
+    $result = Database::getResultFromQuery($query);
+
+    $registries = [];
+
+    if ($result) {
+      while ($row = $result->fetch_assoc()) {
+        $registries[] = $row;
+      }
+    }
+
+    return $registries;
+  }
+
   private function validate()
   {
     $errors = [];

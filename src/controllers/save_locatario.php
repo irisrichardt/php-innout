@@ -1,6 +1,6 @@
 <?php
 session_start();
-requireValidSession(true);
+requireValidSession(false, true, false);
 
 $exception = null;
 $locatarioData = [];
@@ -8,8 +8,6 @@ $locatarioData = [];
 if (count($_POST) === 0 && isset($_GET['update'])) {
   $locatario = Locatario::getOne(['id' => $_GET['update']]);
   $locatarioData = $locatario->getValues();
-
-  file_put_contents("locatarioData.txt", print_r($locatarioData, true) . PHP_EOL, FILE_APPEND);
 
 } elseif (count($_POST) > 0) {
   try {

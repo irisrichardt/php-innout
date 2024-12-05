@@ -2,8 +2,6 @@
 session_start();
 requireValidSession(true);
 
-loadModel("WorkingHours");
-
 $date = (new Datetime())->getTimestamp();
 $today = strftime('%d de %B de %Y', $date);
 
