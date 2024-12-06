@@ -1,6 +1,6 @@
 <?php
 session_start();
-requireValidSession();
+requireValidSession(false, false, true);
 
 loadModel("Imobiliaria");
 
