@@ -23,7 +23,7 @@
     });
   });
 
-  // Gráfico
+  // Gráfico locatários
   document.addEventListener("DOMContentLoaded", function () {
     var ctx = document.getElementById("locatariosChart").getContext("2d");
 
@@ -34,6 +34,55 @@
         datasets: [
           {
             label: "Número de Locatários",
+            data: counts,
+            backgroundColor: estados.map(() => {
+              return "rgba(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ", 0.6)";
+            }),
+            borderColor: "rgba(0,0,0,0.5)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 1,
+            },
+          },
+        },
+        plugins: {
+          legend: {
+            position: "bottom",
+            labels: {
+              font: {
+                size: 14,
+              },
+              padding: 20,
+            },
+          },
+        },
+        layout: {
+          padding: 10,
+        },
+      },
+    });
+  });
+
+  // Gráfico imobiliárias
+  document.addEventListener("DOMContentLoaded", function () {
+    var ctx = document.getElementById("imobiliariasChart").getContext("2d");
+
+    var imobiliariasChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: estados,
+        datasets: [
+          {
+            label: "Número de Imobiliárias",
             data: counts,
             backgroundColor: estados.map(() => {
               return "rgba(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ", 0.6)";

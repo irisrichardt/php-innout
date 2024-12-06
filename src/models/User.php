@@ -31,6 +31,23 @@ class User extends Model
     return parent::update();
   }
 
+  public static function getUsersByType()
+  {
+    $query = "SELECT id, name FROM " . static::$tableName . " WHERE role = 'imobiliaria'";
+
+    $result = Database::getResultFromQuery($query);
+
+    $registries = [];
+
+    if ($result) {
+      while ($row = $result->fetch_assoc()) {
+        $registries[] = $row;
+      }
+    }
+
+    return $registries;
+  }
+
   private function validate()
   {
     $errors = [];

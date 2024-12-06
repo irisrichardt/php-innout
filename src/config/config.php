@@ -23,5 +23,6 @@ require_once(realpath(MODEL_PATH . '/Model.php'));
 require_once(realpath(MODEL_PATH . '/User.php'));
 require_once(realpath(MODEL_PATH . '/WorkingHours.php'));
 require_once(realpath(MODEL_PATH . '/Locatario.php'));
+require_once(realpath(MODEL_PATH . '/Imobiliaria.php'));
 require_once(realpath(EXCEPTION_PATH . '/AppException.php'));
 require_once(realpath(EXCEPTION_PATH . '/ValidationException.php'));

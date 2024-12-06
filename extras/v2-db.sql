@@ -51,7 +51,17 @@ CREATE TABLE imobiliarias (
     email VARCHAR(100) NOT NULL,
     cidade VARCHAR(100) NOT NULL,
     estado VARCHAR(2) NOT NULL,
-    responsavel VARCHAR(100) NOT NULL
+    bairro VARCHAR(100) NOT NULL,
+    rua VARCHAR(255) NOT NULL,
+    numero VARCHAR(20) NOT NULL,
+    cep VARCHAR(9) NOT NULL,
+    user_id INT(6),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    CHECK (
+        EXISTS (
+            SELECT 1 FROM users WHERE users.id = user_id AND users.role = 'imobiliaria'
+        )
+    )
 );
 
 INSERT INTO users (name, password, email, start_date, role)
@@ -82,26 +92,26 @@ VALUES
 
 INSERT INTO locatarios (nome, email, telefone, cidade, estado, bairro, rua, numero, cep)
 VALUES
-('João da Silva', 'joao@gmail.com', '1111-1111', 'São Paulo', 'SP', 'Bairro X', 'Rua A', '123', '01001-000'),
-('Maria Oliveira', 'maria@gmail.com', '2222-2222', 'Rio de Janeiro', 'RJ', 'Bairro Y', 'Rua B', '456', '20040-002'),
-('Carlos Santos', 'carlos@gmail.com', '3333-3333', 'Belo Horizonte', 'MG', 'Bairro Z', 'Rua C', '789', '30140-110'),
-('Ana Costa', 'ana@gmail.com', '4444-4444', 'Curitiba', 'PR', 'Bairro W', 'Avenida D', '101', '80010-130'),
-('Pedro Lima', 'pedro@gmail.com', '5555-5555', 'Porto Alegre', 'RS', 'Bairro V', 'Travessa E', '202', '90010-150'),
-('Luciana Alves', 'luciana@gmail.com', '6666-6666', 'Florianópolis', 'SC', 'Bairro U', 'Rua F', '303', '88010-200'),
-('Felipe Martins', 'felipe@gmail.com', '7777-7777', 'Salvador', 'BA', 'Bairro T', 'Rua G', '404', '40010-300'),
-('Roberta Souza', 'roberta@gmail.com', '8888-8888', 'Fortaleza', 'CE', 'Bairro S', 'Rua H', '505', '60010-400'),
-('Thiago Silva', 'thiago@gmail.com', '9999-9999', 'Recife', 'PE', 'Bairro R', 'Rua I', '606', '50010-500'),
-('Cláudia Lima', 'claudia@gmail.com', '1010-1010', 'Manaus', 'AM', 'Bairro Q', 'Rua J', '707', '69010-600');
+('João da Silva', 'joao@gmail.com', '1111111111', 'São Paulo', 'SP', 'Bairro X', 'Rua A', '123', '01001-000'),
+('Maria Oliveira', 'maria@gmail.com', '2222222222', 'Rio de Janeiro', 'RJ', 'Bairro Y', 'Rua B', '456', '20040-002'),
+('Carlos Santos', 'carlos@gmail.com', '3333333333', 'Belo Horizonte', 'MG', 'Bairro Z', 'Rua C', '789', '30140-110'),
+('Ana Costa', 'ana@gmail.com', '4444444444', 'Curitiba', 'PR', 'Bairro W', 'Avenida D', '101', '80010-130'),
+('Pedro Lima', 'pedro@gmail.com', '5555555555', 'Porto Alegre', 'RS', 'Bairro V', 'Travessa E', '202', '90010-150'),
+('Luciana Alves', 'luciana@gmail.com', '6666666666', 'Florianópolis', 'SC', 'Bairro U', 'Rua F', '303', '88010-200'),
+('Felipe Martins', 'felipe@gmail.com', '7777777777', 'Salvador', 'BA', 'Bairro T', 'Rua G', '404', '40010-300'),
+('Roberta Souza', 'roberta@gmail.com', '8888888888', 'Fortaleza', 'CE', 'Bairro S', 'Rua H', '505', '60010-400'),
+('Thiago Silva', 'thiago@gmail.com', '9999999999', 'Recife', 'PE', 'Bairro R', 'Rua I', '606', '50010-500'),
+('Cláudia Lima', 'claudia@gmail.com', '1010101010', 'Manaus', 'AM', 'Bairro Q', 'Rua J', '707', '69010-600');
 
-INSERT INTO imobiliarias (nome, telefone, email, cidade, estado, responsavel)
+INSERT INTO imobiliarias (nome, telefone, email, cidade, estado, bairro, rua, numero, cep, user_id)
 VALUES
-('Imobiliária ABC', '6666-6666', 'abc@imobiliaria.com', 'São Paulo', 'SP', 'José Lima'),
-('Imobiliária XYZ', '7777-7777', 'xyz@imobiliaria.com', 'Rio de Janeiro', 'RJ', 'Mariana Costa'),
-('Imobiliária 123', '8888-8888', '123@imobiliaria.com', 'Belo Horizonte', 'MG', 'Carlos Santos'),
-('Imobiliária Mais', '9999-9999', 'mais@imobiliaria.com', 'Curitiba', 'PR', 'Felipe Martins'),
-('Imobiliária Boa Vista', '1111-1111', 'boavista@imobiliaria.com', 'Porto Alegre', 'RS', 'Roberta Souza'),
-('Imobiliária Alto Padrão', '2222-2222', 'altopadrao@imobiliaria.com', 'Florianópolis', 'SC', 'Cláudia Lima'),
-('Imobiliária Real', '3333-3333', 'real@imobiliaria.com', 'Salvador', 'BA', 'Thiago Silva'),
-('Imobiliária Brasil', '4444-4444', 'brasil@imobiliaria.com', 'Fortaleza', 'CE', 'Luciana Alves'),
-('Imobiliária União', '5555-5555', 'uniao@imobiliaria.com', 'Recife', 'PE', 'Pedro Lima'),
-('Imobiliária Centro', '6666-6666', 'centro@imobiliaria.com', 'Manaus', 'AM', 'Ana Costa');
+('Imobiliária ABC', '6666666666', 'abc@imobiliaria.com', 'São Paulo', 'SP', 'Centro', 'Av. Paulista', '1000', '01310-000', 9),
+('Imobiliária XYZ', '7777777777', 'xyz@imobiliaria.com', 'Rio de Janeiro', 'RJ', 'Copacabana', 'Rua Atlântica', '500', '22070-000', 10),
+('Imobiliária Solar', '8888888888', 'solar@imobiliaria.com', 'Belo Horizonte', 'MG', 'Savassi', 'Rua da Bahia', '1500', '30160-011', 9),
+('Imobiliária Porto', '9999999999', 'porto@imobiliaria.com', 'Porto Alegre', 'RS', 'Moinhos de Vento', 'Rua Padre Chagas', '200', '90570-080', 10),
+('Imobiliária Horizonte', '1111111111', 'horizonte@imobiliaria.com', 'Fortaleza', 'CE', 'Aldeota', 'Av. Santos Dumont', '3000', '60150-161', 9),
+('Imobiliária Oceano', '2222222222', 'oceano@imobiliaria.com', 'Recife', 'PE', 'Boa Viagem', 'Av. Boa Viagem', '400', '51021-040', 10),
+('Imobiliária Bela Vista', '3333333333', 'belavista@imobiliaria.com', 'Florianópolis', 'SC', 'Trindade', 'Rua Lauro Linhares', '800', '88036-002', 9),
+('Imobiliária Central', '4444444444', 'central@imobiliaria.com', 'Curitiba', 'PR', 'Centro', 'Rua XV de Novembro', '1200', '80060-000', 10),
+('Imobiliária Prime', '5555555555', 'prime@imobiliaria.com', 'Salvador', 'BA', 'Pituba', 'Av. Manoel Dias', '2500', '41830-000', 9),
+('Imobiliária Tropical', '6666666666', 'tropical@imobiliaria.com', 'Manaus', 'AM', 'Adrianópolis', 'Av. Mário Ypiranga', '130', '69057-002', 10);

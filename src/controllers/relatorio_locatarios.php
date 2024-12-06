@@ -6,11 +6,9 @@ $exception = null;
 
 $user = $_SESSION['user'];
 
-$registries = Locatario::countLocatariosByEstado();
-
 try {
   $locatarios = Locatario::get();
-  $locatariosByEstado = Locatario::countLocatariosByEstado();
+  $registries = Locatario::countLocatariosByEstado();
 } catch (Exception $e) {
   $exception = $e->getMessage();
 }

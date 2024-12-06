@@ -13,6 +13,6 @@
   <?php elseif ($user->role === 'locatario'): ?>
     <h3>Você é locatário(a)!</h3>
   <?php else: ?>
-    <h3>Você é responsável pela imobialiaria!</h3>
+    <h3>Você é responsável pela imobiliaria!</h3>
   <?php endif; ?>
 </main>

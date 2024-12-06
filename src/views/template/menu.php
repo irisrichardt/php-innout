@@ -10,13 +10,13 @@
 
       <?php if ($user->role === 'admin' || $user->role === 'imobiliaria'): ?>
         <li class="nav-item">
-          <a href="day_records.php">
+          <a href="imobiliarias.php">
             <i class="icofont-building-alt me-2"></i>
             Imobiliarias
           </a>
         </li>
         <li class="nav-item">
-          <a href="day_records.php">
+          <a href="relatorio_imobiliarias.php">
             <i class="icofont-file-text me-2"></i>
             Relatório Imobiliarias
           </a>
@@ -61,7 +61,7 @@
       </div>
       <div class="division my-1"></div>
       <div class="sidebar-widget">
-        <a href="configuracoes.php">
+        <a href="relatorio_geral.php">
           <i class="icon icofont-chart-histogram"></i>
           <div class="info">
             <span class="main">Relatório geral</span>
